@@ -4,11 +4,34 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 
+import Navbar from "./components/navbar";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+} from "react-router-dom";
+import Home from "./pages";
+import About from "./pages/about";
+import FAQ from "./pages/faq";
+import Blog from "./pages/blog";
+import Login from "./pages/login";
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/FAQ" element={<FAQ />}/>
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </Router>
+
       <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
