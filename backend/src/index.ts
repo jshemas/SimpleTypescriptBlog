@@ -7,6 +7,10 @@ app.get('/', (_req, res) => {
   res.json({ message: 'Hello, world!' });
 });
 
-app.listen(port, () => {
-  console.log(`Server listening on http://localhost:${port}`);
-});
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log(`Server listening on http://localhost:${port}`);
+  });
+}
+
+export default app;
