@@ -1,7 +1,11 @@
 import express from 'express';
+import postRoutes from './routes/post.routes';
 
 const app = express();
 const port = process.env.PORT ? Number(process.env.PORT) : 3000;
+
+app.use(express.json());
+app.use('/posts', postRoutes);
 
 app.get('/', (_req, res) => {
   res.json({ message: 'Hello, world!' });
