@@ -10,6 +10,8 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "lint": "eslint src test --ext .ts",
+    "lint:fix": "eslint src test --ext .ts --fix",
     "prepare": "npm run build",
     "test": "tsc -p tsconfig.test.json && mocha \"dist-test/test/**/*.test.js\""
   },
@@ -17,14 +19,19 @@
     "express": "^5.2.1"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^8.59.4",
+    "@typescript-eslint/parser": "^8.59.4",
     "@types/express": "^5.0.6",
     "@types/node": "^20.14.2",
+    "eslint": "^10.4.0",
+    "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^6.0.3",
+    "typescript-eslint": "^8.59.4",
     "@types/mocha": "^10.0.10",
     "@types/supertest": "^7.2.0",
     "mocha": "^11.7.5",
-    "supertest": "^7.2.2",
-    "ts-node": "^10.9.2"
+    "supertest": "^7.2.2"
   }
 }
