@@ -16,8 +16,7 @@ module.exports = [
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
-        project: ['./tsconfig.json', './tsconfig.test.json'],
-        tsconfigRootDir: process.cwd(),
+        projectService: true,
       },
     },
     plugins: {

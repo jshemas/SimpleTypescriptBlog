@@ -21,8 +21,7 @@ export default defineConfig([
       globals: globals.browser,
       parserOptions: {
         ecmaFeatures: { jsx: true },
-        project: ['./tsconfig.json'],
-        tsconfigRootDir: import.meta.dirname,
+        projectService: true,
       },
     },
   },
